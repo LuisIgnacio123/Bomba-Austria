@@ -7,7 +7,7 @@
 					<h3 class="panel-title">Ingresar Nuevo Socio</h3>
 				</div>
 				<div class="panel-body">
-					 <form action="<?php echo base_url() ?>Socios/guardar" method="post" class="form-horizontal">
+					 <form action="<?php echo base_url() ?>Recaudador/guardar" method="post" class="form-horizontal">
 					 	<div class="form-group"> 
 							<label class="col-sm-2 control-label">Nombre</label> 
 							<div class="col-sm-10"> 
@@ -47,6 +47,19 @@
 								</div>
 							</div> 
 						</div>
+						<div class="line-dashed"></div>
+						<div class="form-group"> 
+							<label class="col-sm-4 control-label">Fecha de Nacimiento</label> 
+							<div class="col-sm-6"> 
+								<div id="date-popup" class="input-group date"> 
+									<input type="text" data-format="D, dd MM yyyy" class="form-control" name="Fecha_Nac" id="Fecha_Nac"> 
+									<span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
+								</div>
+							</div> 
+						</div>
+
+
+
 						<div class="line-dashed"></div>
 						<div class="form-group"> 
 							<label class="col-sm-2 control-label">Teléfono</label> 

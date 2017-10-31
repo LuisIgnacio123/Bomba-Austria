@@ -49,10 +49,10 @@
 		<form method="post" action="<?php echo base_url('Login/validar') ?>">  
 			<input type="hidden" name="token" value="<?php echo $token ?>">                      
 			<div class="form-group">
-				<input type="text" placeholder="Username" class="form-control" id="username" name="username" tabindex="1">
+				<input type="text" style="color: #ff0000" placeholder="Username" class="form-control" id="username" name="username" tabindex="1">
 			</div>                        
 			<div class="form-group">
-				<input type="password" placeholder="Password" class="form-control" id="password" name="password" tabindex="2">
+				<input type="password" style="color: #9FF781" placeholder="Password" class="form-control" id="password" name="password" tabindex="2">
 			</div>
 			<!--
 			<div class="form-group">

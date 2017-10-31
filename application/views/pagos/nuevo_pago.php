@@ -75,8 +75,8 @@
 						</div>
 						<div class="line-dashed"></div>
 						<div class="form-group"> 
-							<label class="col-sm-3 control-label">Date Picker (popup)</label> 
-							<div class="col-sm-3"> 
+							<label class="col-sm-4 control-label">Fecha de Pago</label> 
+							<div class="col-sm-4"> 
 								<div id="date-popup" class="input-group date"> 
 									<input type="text" data-format="D, dd MM yyyy" class="form-control"> 
 									<span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
@@ -84,7 +84,15 @@
 							</div> 
 						</div>
 
-
+						<div class="form-group"> 
+							<label class="col-sm-4 control-label">Fehca Fin</label> 
+							<div class="col-sm-6"> 
+								<div id="date-popup1" class="input-group date"> 
+									<input type="text" data-format="D, dd MM yyyy" class="form-control"> 
+									<span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
+								</div>
+							</div> 
+						</div>
 
 						<div class="line-dashed"></div>
 						<div class="form-group"> 
@@ -104,7 +112,7 @@
 							</div>
 						<?php endif;?>
 						<div class="form-group">
-							<div class="col-sm-5col-sm-offset-2">
+							<div class="col-sm-10c	ol-sm-offset-2">
 								<button type="reset" class="btn btn-white">Cancelar</button>
 								<button type="submit" class="btn btn-primary">Guardar Socio</button>
 							</div>

@@ -30,8 +30,41 @@
 
 <!--ChartJs-->
 <script src="<?php echo base_url()?>/assets/js/plugins/chartjs/Chart.min.js"></script>
+<script src="<?php echo base_url()?>/assets/js/plugins/datepicker/bootstrap-datepicker.js"></script>
 <script>
 	$(document).ready(function () {
+		$('#datepicker').datepicker({
+			keyboardNavigation: false,
+			forceParse: false,
+			todayHighlight: true
+		});
+
+		$('#date-popup').datepicker({
+			keyboardNavigation: false,
+			forceParse: false,
+			todayHighlight: true,
+			format: "dd/mm/yyyy"
+		});
+
+		$('#date-popup1').datepicker({
+			keyboardNavigation: false,
+			forceParse: false,
+			todayHighlight: true,
+			format: "dd/mm/yyyy"
+		});
+
+		var dragFixed = document.getElementById('drag-fixed');
+		noUiSlider.create(dragFixed, {
+			start: [40, 60],
+			behaviour: 'drag-fixed',
+			connect: true,
+			range: {
+				'min': 20,
+				'max': 80
+			}
+		});
+
+
 		var $checkbox = $('.todo-list .checkbox input[type=checkbox]');
 
 		$checkbox.change(function () {
@@ -397,6 +430,7 @@
 		});
 		canvas.parentNode.parentNode.appendChild(legendHolder.firstChild);
 	});
+
 
 
 
