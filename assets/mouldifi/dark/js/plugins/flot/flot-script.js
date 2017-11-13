@@ -49,7 +49,7 @@ $(function () {
     var barData = {
         label: "bar",
         data: [
-            [1, 34],
+            [1, 50],
             [2, 25],
             [3, 19],
             [4, 34],
@@ -112,7 +112,7 @@ $(function () {
     var barData = {
         label: "bar",
         data: [
-            [1, 34],
+            [1, 50],
             [2, 25],
             [3, 19],
             [4, 34],

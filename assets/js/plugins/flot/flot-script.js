@@ -49,7 +49,7 @@ $(function () {
     var barData = {
         label: "bar",
         data: [
-            [1, 34],
+            [1, 40],
             [2, 25],
             [3, 19],
             [4, 34],
