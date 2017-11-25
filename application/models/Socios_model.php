@@ -39,4 +39,4 @@ class Socios_model extends CI_Model
         }
     }
 
-}
+}   

@@ -30,7 +30,9 @@
 <script src="<?php echo base_url()?>/assets/js/plugins/flot/jquery.flot.canvas.min.js"></script>
 
 <!--ChartJs-->
-<script src="<?php echo base_url()?>/assets/js/plugins/flot/flot-script.js"></script>
+<!--<script src="<?php echo base_url()?>/assets/js/plugins/flot/flot-script.js"></script>-->
+<script src="<?php echo base_url()?>/assets/js/flot.js"></script>
+
 <!-- DatePicker-->
 <script src="<?php echo base_url()?>/assets/js/plugins/datepicker/bootstrap-datepicker.js"></script>
 
@@ -85,69 +87,6 @@
 				$(this).parent().removeClass('checked');
 			}
 		});
-		//Flot Bar Chart
-		$(function () {
-		    var barOptions = {
-		        series: {
-		            bars: {
-		                show: true,
-		                barWidth: 0.6,
-		                fill: true,
-		                fillColor: {
-		                    colors: [{
-		                            opacity: 0.8
-		                        }, {
-		                            opacity: 0.8
-		                        }]
-		                }
-		            }
-		        },
-		        xaxis: {
-		            tickDecimals: 0,
-					font: {
-		                weight: "bold"
-		            },
-					color: "#e5e4ea",
-					tickColor: "#364064"
-		        },
-				yaxis: {
-					tickColor: "#364064",
-					font: {
-		                weight: "bold"
-		            },
-					color: "#e5e4ea"
-		        },
-		        colors: ["#00B8CE"],
-		        grid: {
-		            color: "#999999",
-		            hoverable: true,
-		            clickable: true,
-		            tickColor: "#D4D4D4",
-		            borderWidth: 0
-		        },
-		        legend: {
-		            show: false
-		        },
-		        tooltip: true,
-		        tooltipOpts: {
-		            content: "x: %x, y: %y"
-		        }
-		    };
-		    var barData = {
-		        label: "bar",
-		        data: [
-		            [1, 50],
-		            [2, 25],
-		            [3, 19],
-		            [4, 34],
-		            [5, 32],
-		            [6, 44]
-		        ]
-		    };
-		    $.plot($("#flot-bar-chart"), [barData], barOptions);
-
-		});
-		
 	});
 
 </script>

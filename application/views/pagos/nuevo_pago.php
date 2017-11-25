@@ -76,7 +76,7 @@
 						<div class="line-dashed"></div>
 						<div class="form-group"> 
 							<label class="col-sm-4 control-label">Fecha de Pago</label> 
-							<div class="col-sm-4"> 
+							<div class="col-sm-6"> 
 								<div id="date-popup" class="input-group date"> 
 									<input type="text" data-format="D, dd MM yyyy" class="form-control"> 
 									<span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
@@ -99,7 +99,7 @@
 							<label class="col-sm-2 control-label">Monto</label> 
 							<div class="col-sm-10"> 
 								<div class="input-group"> 
-									<input type="number" placeholder="Monto a pagar" class="form-control" readonly="" name="Monto" id="Monto"> 
+									<input type="number" placeholder="Monto a pagar" class="form-control" name="Monto" id="Monto"> 
 									<span class="input-group-addon"><i class="icon-paypal"></i></span>
 								</div>
 							</div> 

@@ -54,4 +54,8 @@
 <link href="<?php echo base_url()?>/assets/css/plugins/select2/select2.css" rel="stylesheet">
 <link href="<?php echo base_url()?>/assets/css/mouldifi-forms.css" rel="stylesheet" >
 
+
+<script type="text/javascript">
+	var base_url = "<?php echo base_url();?>"
+</script>
 </head>

@@ -9,6 +9,7 @@ class Recaudador extends CI_Controller {
         // incluyen Modelo
         $this->load->model('Recaudador_model');
         $this->load->model('Socios_model');
+    //    $this->output->enable_profiler(true);
     }
 	public function index(){
 		$this->load->view('comunes/head');
@@ -94,6 +95,16 @@ class Recaudador extends CI_Controller {
 
 	public function anular(){
 		
+	}
+
+	public function guardarpago(){
+
+	}
+
+	public function graficar(){
+		$datos = $this->Recaudador_model->listar();
+		 
+		 echo json_encode($datos);
 	}
 
 	 public function rut($r = false){
