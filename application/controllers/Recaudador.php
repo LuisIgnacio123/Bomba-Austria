@@ -94,10 +94,78 @@ class Recaudador extends CI_Controller {
 	}
 
 	public function anular(){
+		$recibo = $this->input->post('recibo');
+		$talonario = $this->input->post('talonario');
+
+		if($this->Recaudador_model->anularRecibo($recibo,$talonario)){
+			$this->session->set_flashdata('query', 'Anulada con Exito');
+			$this->session->set_flashdata('query_alert', 'alert-success');
+			redirect(base_url('Recaudador/anularBoleta'), 'refresh');
+		}
+		else{
+			$this->session->set_flashdata('query', 'Error al anular');
+			$this->session->set_flashdata('query_alert', 'alert-success');
+			redirect(base_url('Recaudador/anularBoleta'), 'refresh');	
+		}
 		
 	}
 
 	public function guardarpago(){
+		$this->form_validation->set_rules('Talonario', 'talonario', 'required|trim|strip_tags');
+		$this->form_validation->set_rules('Boleta', 'boleta', 'required|trim|strip_tags');
+		$this->form_validation->set_rules('N_Socio', 'n_socio', 'required|trim|strip_tags');
+		$this->form_validation->set_rules('Direccion', 'direccion', 'required|trim|strip_tags');
+		$this->form_validation->set_rules('Sector', 'sector', 'required|trim|strip_tags');
+		$this->form_validation->set_rules('Monto', 'monto', 'required|trim|strip_tags|xss_clean');
+
+
+		if($this->form_validation->run() === false) {
+			$this->session->set_flashdata('query', validation_errors());
+			$this->session->set_flashdata('query_alert', 'alert-danger');
+
+			$this->load->view('comunes/head');
+			$this->load->view('comunes/menu-lateral-recaudador');
+			$this->load->view('comunes/menu-superior');
+			$this->load->view('pagos/nuevo_pago');
+			$this->load->view('comunes/footer');
+		} else {
+			$nombre = $this->input->post('N_Socio');
+			$talonario = $this->input->post('Talonario');
+			$boleta = $this->input->post('Boleta');
+			$id_socio = $this->input->post('socio_id');
+			$direccion = $this->input->post('Direccion');
+			$sector = $this->input->post('Sector');
+
+			$fecha = $this->input->post('FechaPago');
+			$fecha_in = explode('/',$fecha);
+			$nfecha = "{$fecha_in[2]}-{$fecha_in[1]}-{$fecha_in[0]}";
+
+			$fecha2 = $this->input->post('FechaFin');
+			$fecha_fin =  explode('/',$fecha2);
+			$nfecha2 = "{$fecha_fin[2]}-{$fecha_fin[1]}-{$fecha_fin[0]}";
+
+			$monto = $this->input->post('Monto');
+
+			$datos = array (
+				'boleta_nombre_socio'	=> $nombre,
+				'boleta_fecha'			=> $nfecha,
+				'boleta_aporte' 		=> $monto,
+				'boleta_codigo'			=> $id_socio,
+				'boleta_talonario'		=> $talonario,
+				'boleta_estado'			=> 1
+			);
+
+			if($this->Recaudador_model->guardarpago($datos)){
+				$this->session->set_flashdata('query', 'Guardado con Exito');
+				$this->session->set_flashdata('query_alert', 'alert-success');
+				redirect(base_url('Recaudador/realizarPago'), 'refresh');
+			} else {
+				// no se Guarda
+				$this->session->set_flashdata('query', 'Problemas al Guardar');
+				$this->session->set_flashdata('query_alert', 'alert-danger');
+				redirect(base_url('Recaudador/realizarPago'), 'refresh');
+            }
+		}
 
 	}
 

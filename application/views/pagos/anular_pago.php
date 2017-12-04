@@ -4,7 +4,7 @@
 		<div class="col-lg-12">
 			<div class="panel panel-default">
 				<div class="panel-heading clearfix">
-					<h3 class="panel-title">Ingresar Nuevo Socio</h3>
+					<h3 class="panel-title">Ingresar Recibo a Anular</h3>
 				</div>
 				<div class="panel-body">
 					 <form action="<?php echo base_url() ?>Recaudador/anular" method="post" class="form-horizontal">
