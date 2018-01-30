@@ -1,6 +1,6 @@
 			<!-- Footer -->
 			<footer class="footer-main"> 
-				&copy; 2017 <strong>Bomba Austria</strong> by Luis</a> 
+				&copy; 2017 <strong>Bomba Austria</strong> by Luis Aguilera Vera</a> 
 			</footer>	
 			<!-- /footer -->
 		
@@ -14,27 +14,27 @@
 <!-- /page container -->
 
 <!--Load JQuery-->
-<script src="<?php echo base_url()?>/assets/js/jquery.min.js"></script>
-<script src="<?php echo base_url()?>/assets/js/bootstrap.min.js"></script>
-<script src="<?php echo base_url()?>/assets/js/plugins/metismenu/jquery.metisMenu.js"></script>
-<script src="<?php echo base_url()?>/assets/js/plugins/blockui-master/jquery-ui.js"></script>
-<script src="<?php echo base_url()?>/assets/js/plugins/blockui-master/jquery.blockUI.js"></script>
+<script src="<?php echo base_url()?>assets/js/jquery.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/bootstrap.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/plugins/metismenu/jquery.metisMenu.js"></script>
+<script src="<?php echo base_url()?>assets/js/plugins/blockui-master/jquery-ui.js"></script>
+<script src="<?php echo base_url()?>assets/js/plugins/blockui-master/jquery.blockUI.js"></script>
 <!--Float Charts-->
-<script src="<?php echo base_url()?>/assets/js/plugins/flot/jquery.flot.min.js"></script>
-<script src="<?php echo base_url()?>/assets/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
-<script src="<?php echo base_url()?>/assets/js/plugins/flot/jquery.flot.resize.min.js"></script>
-<script src="<?php echo base_url()?>/assets/js/plugins/flot/jquery.flot.selection.min.js"></script>        
-<script src="<?php echo base_url()?>/assets/js/plugins/flot/jquery.flot.pie.min.js"></script>
-<script src="<?php echo base_url()?>/assets/js/plugins/flot/jquery.flot.time.min.js"></script>
-<script src="<?php echo base_url()?>/assets/js/functions.js"></script>
-<script src="<?php echo base_url()?>/assets/js/plugins/flot/jquery.flot.canvas.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/plugins/flot/jquery.flot.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/plugins/flot/jquery.flot.resize.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/plugins/flot/jquery.flot.selection.min.js"></script>        
+<script src="<?php echo base_url()?>assets/js/plugins/flot/jquery.flot.pie.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/plugins/flot/jquery.flot.time.min.js"></script>
+<script src="<?php echo base_url()?>assets/js/functions.js"></script>
+<script src="<?php echo base_url()?>assets/js/plugins/flot/jquery.flot.canvas.min.js"></script>
 
 <!--ChartJs-->
 <!--<script src="<?php echo base_url()?>/assets/js/plugins/flot/flot-script.js"></script>-->
-<script src="<?php echo base_url()?>/assets/js/flot.js"></script>
+<script src="<?php echo base_url()?>assets/js/flot.js"></script>
 
 <!-- DatePicker-->
-<script src="<?php echo base_url()?>/assets/js/plugins/datepicker/bootstrap-datepicker.js"></script>
+<script src="<?php echo base_url()?>assets/js/plugins/datepicker/bootstrap-datepicker.js"></script>
 
 <script>
 	$(document).ready(function () {

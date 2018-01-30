@@ -79,11 +79,11 @@ class Login extends CI_Controller {
                     }
 
                     elseif ($login->usuario_privilegio == 2) {
-                        redirect(base_url('Inicio'), 'refresh');
+                        redirect(base_url('Tesorero'), 'refresh');
                     }
 
                     elseif ($login->usuario_privilegio == 3) {
-                        redirect(base_url('Inicio'), 'refresh');
+                        redirect(base_url('Secretario'), 'refresh');
                     }
 
                     //redirect(base_url('Inicio'), 'refresh');
