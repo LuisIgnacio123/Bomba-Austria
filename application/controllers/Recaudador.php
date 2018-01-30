@@ -170,6 +170,7 @@ class Recaudador extends CI_Controller {
 	}
 
 	public function graficar(){
+		 $datos = $this->Recaudador_model->listar('Luis Aguilera');
 		 echo json_encode($datos);
 	}
 
