@@ -7,7 +7,7 @@ $(function () {
         success: function(respuesta){
             $data = jQuery.parseJSON(respuesta);
             //var $totalmes8 = 0;
-            var $mes = ['0','1','2','3','4','5','6','7','8','9','10','11'];
+            var $mes = ['1','2','3','4','5','6','7','8','9','10','11','12'];
             var $totalmes1 = 0;
             var $totalmes2 = 0;
             var $totalmes3 = 0;
@@ -21,6 +21,9 @@ $(function () {
             var $totalmes11 = 0;
             var $totalmes12 = 0;
 
+            var ticks = [[1,'Enero '], [2,'Febrero '],[3,'Marzo'],[4,'Abril'],[5,'Mayo'],[6,'Junio'],[7,'Julio'],[8,'Agosto'],[9,'Septiembre'],
+                         [10,'Octubre'], [11, 'Noviembre '], [12, 'Diciembre ']];
+
             var f = new Date();
             for (var i = 0; i < $data.length; i++) {
                 var $fecha = $data[i].boleta_fecha;
@@ -29,11 +32,8 @@ $(function () {
                 var $Fecha_aux = $Fecha.split("-");
 
                 for (var j = $fecha_mes[0]; j <= $Fecha_aux[2]; j++) {
-                    //console.log($fecha_mes[0] + " " +  $fecha_mes[1]);
                 //if ($fecha_mes[0] == $Fecha_aux[2]) {
-                    //console.log($Fecha_aux[2]);
                     var $option = parseInt($fecha_mes[1]);
-                    //console.log($option);
                     switch($option){
                         case 1:
                             $totalmes1 += parseInt($data[i].boleta_aporte);
@@ -70,14 +70,11 @@ $(function () {
                             break;
                         case 12:
                             $totalmes12 += parseInt($data[i].boleta_aporte);
-                            $fecha = j;
                             break;
                     }
                 }
             }
 
-             var ticks = [[0,'Enero ' + $fecha_mes[0]], [1,'Febrero ' + $fecha_mes[0]],[2,'Marzo'],[3,'Abril'],[4,'Mayo'],[5,'Junio'],[6,'Julio'],[7,'Agosto'],[8,'Septiembre'],
-                         [9,'Octubre'], [10, 'Noviembre '], [11, 'Diciembre ']];
 
              var barData = {
              label: "bar",

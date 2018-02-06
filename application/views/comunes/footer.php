@@ -36,6 +36,9 @@
 <!-- DatePicker-->
 <script src="<?php echo base_url()?>assets/js/plugins/datepicker/bootstrap-datepicker.js"></script>
 
+<!-- Nemixs colaborations -->
+<script src="<?php echo base_url()?>assets/js/autorrelleno.js"></script>
+
 <script>
 	$(document).ready(function () {
 		$('#datepicker').datepicker({

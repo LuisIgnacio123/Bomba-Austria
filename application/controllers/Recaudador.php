@@ -95,9 +95,8 @@ class Recaudador extends CI_Controller {
 
 	public function anular(){
 		$recibo = $this->input->post('recibo');
-		$talonario = $this->input->post('talonario');
 
-		if($this->Recaudador_model->anularRecibo($recibo,$talonario)){
+		if($this->Recaudador_model->anularRecibo($recibo)){
 			$this->session->set_flashdata('query', 'Anulada con Exito');
 			$this->session->set_flashdata('query_alert', 'alert-success');
 			redirect(base_url('Recaudador/anularBoleta'), 'refresh');
@@ -115,7 +114,6 @@ class Recaudador extends CI_Controller {
 		$this->form_validation->set_rules('Boleta', 'boleta', 'required|trim|strip_tags');
 		$this->form_validation->set_rules('N_Socio', 'n_socio', 'required|trim|strip_tags');
 		$this->form_validation->set_rules('Direccion', 'direccion', 'required|trim|strip_tags');
-		$this->form_validation->set_rules('Sector', 'sector', 'required|trim|strip_tags');
 		$this->form_validation->set_rules('Monto', 'monto', 'required|trim|strip_tags|xss_clean');
 
 
@@ -140,11 +138,8 @@ class Recaudador extends CI_Controller {
 			$fecha_in = explode('/',$fecha);
 			$nfecha = "{$fecha_in[2]}-{$fecha_in[1]}-{$fecha_in[0]}";
 
-			$fecha2 = $this->input->post('FechaFin');
-			$fecha_fin =  explode('/',$fecha2);
-			$nfecha2 = "{$fecha_fin[2]}-{$fecha_fin[1]}-{$fecha_fin[0]}";
-
 			$monto = $this->input->post('Monto');
+			$cantidad_meses = $this->input->post('meses');
 
 			$datos = array (
 				'boleta_nombre_socio'	=> $nombre,
@@ -166,6 +161,23 @@ class Recaudador extends CI_Controller {
 				redirect(base_url('Recaudador/realizarPago'), 'refresh');
             }
 		}
+
+	}
+
+	public function try(){
+	//	echo json_encode($this->Recaudador_model->mostrarRecibo($_POST["recibo"] = 3));
+	//	echo json_encode($this->Recaudador_model->listar('Luis Aguilera'));
+
+	}
+
+	public function buscar_boleta(){
+		$recibo = $this->input->post('recibo');
+	//	$id = $this->input->post('recibo');
+
+	//	$datos = $this->Recaudador_model->mostrarRecibo($id,$talonario);
+		$datos = $this->Recaudador_model->mostrarRecibo($recibo);
+
+		echo json_encode($datos);
 
 	}
 

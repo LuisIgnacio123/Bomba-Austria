@@ -38,12 +38,30 @@ class Recaudador_model extends CI_Model
         }
 	}
 
-	public function anularRecibo($id,$talonario){
+	public function anularRecibo($id){
 		$this->db->set('boleta_estado',0);
-		$this->db->where('boleta_talonario',$talonario);
 		$this->db->where('boletas_id',$id);
 		$this->db->update('boletas');
 		return true;
+	}
+
+	public function mostrarRecibo($recibo){
+		$this->db->select("boleta_talonario as talonario");
+		$this->db->select("boleta_nombre_socio as nombre");
+		$this->db->select("boleta_fecha as fecha");
+		$this->db->select("boleta_aporte as monto");
+		$this->db->select("socios.socio_direccion as direccion");
+		$this->db->select("socios.socio_sector as sector");
+		$this->db->join('socios', 'boleta_codigo = socios.socio_id');
+
+
+		$this->db->where('boletas_id', $recibo);
+		//$this->db->where('boletas_id',$id);
+
+		$consulta = $this->db->get('boletas');
+
+		return $consulta->row();
+
 	}
 
 }
