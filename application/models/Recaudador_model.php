@@ -22,12 +22,6 @@ class Recaudador_model extends CI_Model
 
 	}
 
-	public function buscador($buscado){
-		$this->db->order_by('socio_id');
-		$this->db->like("socio_nombre",$buscado);
-		return $this->db->get('socios')->result_array();
-	}
-
 	public function guardarpago($datos){
 		$this->db->insert('boletas', $datos);
         if($this->db->affected_rows() < 0) {
@@ -56,12 +50,50 @@ class Recaudador_model extends CI_Model
 
 
 		$this->db->where('boletas_id', $recibo);
+		$this->db->where('boleta_estado',1);
 		//$this->db->where('boletas_id',$id);
 
 		$consulta = $this->db->get('boletas');
 
 		return $consulta->row();
 
+	}
+
+	public function buscarSocioID($id){
+		$this->db->select('socio_nombre as nombre');
+		$this->db->select('socio_direccion as direccion');
+		$this->db->select('socio_sector as sector');
+
+		$this->db->where('socio_id', $id);
+		$this->db->where('socio_estado', 1);
+
+		$consulta = $this->db->get('socios');
+		return $consulta->row();
+	}
+
+
+	public function buscarSocioNombre($nombre){
+		$this->db->select('socio_id as id');
+		$this->db->select('socio_direccion as direccion');
+		$this->db->select('socio_sector as sector');
+
+		$this->db->where('socio_nombre', $nombre);
+		$this->db->where('socio_estado', 1);
+
+		$consulta = $this->db->get('socios');
+		return $consulta->row();	
+	}
+
+	public function buscarSocioDir($dir){
+		$this->db->select('socio_id as id');
+		$this->db->select('socio_nombre as nombre');
+		$this->db->select('socio_sector as sector');
+
+		$this->db->where('socio_direccion',$dir);
+		$this->db->where('socio_estado',1);
+
+		$consulta = $this->db->get('socios');
+		return $consulta->row();
 	}
 
 }

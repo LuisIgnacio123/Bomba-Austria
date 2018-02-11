@@ -72,11 +72,10 @@
 						</div>
 						<div class="line-dashed"></div>
 						<div class="form-group"> 
-							<label class="col-sm-2 control-label">Monto</label> 
+							<label class="col-sm-2 control-label">Contraseña</label> 
 							<div class="col-sm-10"> 
 								<div class="input-group"> 
-									<input type="number" placeholder="Monto a pagar" class="form-control" name="Monto" id="Monto"> 
-									<span class="input-group-addon"><i class="icon-paypal"></i></span>
+									<input type="text" placeholder="Contraseña" class="form-control" name="password" id="password"> 
 								</div>
 							</div> 
 						</div>

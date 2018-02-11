@@ -34,28 +34,28 @@
 							<div class="form-group"> 
 								<label class="col-sm-2 control-label">Id Socio</label> 
 								<div class="col-sm-10"> 
-									<input type="text" placeholder="ID Socio" class="form-control" name='socio_id' id='socio_id'> 
+									<input type="text" placeholder="ID Socio" class="form-control" name='socio_id' id='socio_id' onblur="buscar_IDsocio(this)"> 
 								</div> 
 							</div>
 							<br>
 							<div class="form-group"> 
 								<label class="col-sm-2 control-label">Nombre Socio</label> 
 								<div class="col-sm-10"> 
-									<input type="text" placeholder="Nombre Socio" class="form-control" name='N_Socio' id='N_Socio'> 
+									<input type="text" placeholder="Nombre Socio" class="form-control" name='N_Socio' id='N_Socio' onblur="buscar_Nombresocio(this)"> 
 								</div> 
 							</div>
 							<br>
 							<div class="form-group"> 
 								<label class="col-sm-2 control-label">Dirección Socio</label> 
 								<div class="col-sm-10"> 
-									<input type="text" placeholder="Dirección Socio" class="form-control" name='Direccion' id='Direccion'> 
+									<input type="text" placeholder="Dirección Socio" class="form-control" name='Direccion' id='Direccion' onblur="buscar_Dirsocio(this)"> 
 								</div> 
 							</div>
 							<br>
 							<div class="form-group"> 
 								<label class="col-sm-2 control-label">Sector</label> 
 								<div class="col-sm-10"> 
-									<input type="text" placeholder="Sector" class="form-control"> 
+									<input type="text" placeholder="Sector" class="form-control" name="sector" id="sector"> 
 								</div> 
 							</div>
 							<br>

@@ -167,14 +167,14 @@ class Recaudador extends CI_Controller {
 	public function try(){
 	//	echo json_encode($this->Recaudador_model->mostrarRecibo($_POST["recibo"] = 3));
 	//	echo json_encode($this->Recaudador_model->listar('Luis Aguilera'));
+	//	echo json_encode($this->Recaudador_model->buscarSocioID($_POST["socio_id"] = 5));
+	//	echo json_encode($this->Recaudador_model->buscarSocioNombre($_POST["N_Socio"] = "felipe rivas"));
+		echo json_encode($this->Recaudador_model->buscarSocioDir($_POST["Direccion"] = "Quemchi 6193"));
 
 	}
 
 	public function buscar_boleta(){
 		$recibo = $this->input->post('recibo');
-	//	$id = $this->input->post('recibo');
-
-	//	$datos = $this->Recaudador_model->mostrarRecibo($id,$talonario);
 		$datos = $this->Recaudador_model->mostrarRecibo($recibo);
 
 		echo json_encode($datos);
@@ -186,14 +186,30 @@ class Recaudador extends CI_Controller {
 		 echo json_encode($datos);
 	}
 
-	public function buscar_socio(){
-		$id = $this->input->post('N_Socio');
-		$datos = $this->Recaudador_model->buscador();
-		
+	//buscar socio de nuevo pago por id
+	public function buscar_idsocio(){
+		$id = $this->input->post('socio_id');
+		$datos = $this->Recaudador_model->buscarSocioID($id);
 		echo json_encode($datos);
 	}
 
-	 public function rut($r = false){
+	//buscar socio de nuevo pago por nombre
+	public function buscar_nombresocio(){
+		$nombre = $this->input->post('N_Socio');
+		$datos = $this->Recaudador_model->buscarSocioNombre($nombre);
+		echo json_encode($datos);
+	}
+
+	//buscar socio de nuevo pago por direccion
+	public function buscar_dirsocio(){
+		$dir = $this->input->post('Direccion');
+		$datos = $this->Recaudador_model->buscarSocioDir($dir);
+		echo json_encode($datos);
+	}
+
+
+
+	public function rut($r = false){
 
         if ((!$r) or (is_array($r))) {
             return false;

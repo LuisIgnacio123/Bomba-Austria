@@ -30,9 +30,9 @@
 			</li>
 
 
-			<li id="recaudador" class="has-sub"><a href="<?php echo base_url('')?>"><i class="icon-credit-card"></i><span class="title">Ingresar Recaudador</span></a>
+			<li id="secretario" class="has-sub"><a href="<?php echo base_url('secretario')?>"><i class="icon-credit-card"></i><span class="title">Ingresar Recaudador</span></a>
 				<ul id="navPagos" class="nav collapse"> <!-- nav -->
-					<li id="ingresarRecaudador" class=""><a href="<?php echo base_url('Secretario/ingresarRecaudador')?>"><span class="title">Ingresar Recaudador</span></a></li>
+					<li id="ingresarRecaudador" class=""><a href="<?php echo base_url('Secretario/ingresar_recaudador')?>"><span class="title">Ingresar Recaudador</span></a></li>
 				</ul>
 			</li>
 
