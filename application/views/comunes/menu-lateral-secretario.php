@@ -23,13 +23,7 @@
 		<!-- Main navigation -->
 		<ul id="side-nav" class="main-menu navbar-collapse collapse">
 			<li id="dashboard" class=""><a href="<?php echo base_url('Secretario')?>"><i class="icon-gauge"></i><span class="title">Dashboard</span></a></li>
-			<li id="recaudador" class="has-sub"><a href="<?php echo base_url('Secretario/index2')?>"><i class="icon-credit-card"></i><span class="title">Modificar Socio Cooperador</span></a>
-				<ul id="navPagos" class="nav collapse"> <!-- nav -->
-					<li id="realizarPago" class=""><a href="<?php echo base_url('Secretario/anularSocio')?>"><span class="title">Anular Socio Cooperador</span></a></li>
-				</ul>
-			</li>
-
-
+			
 			<li id="secretario" class="has-sub"><a href="<?php echo base_url('secretario')?>"><i class="icon-credit-card"></i><span class="title">Ingresar Recaudador</span></a>
 				<ul id="navPagos" class="nav collapse"> <!-- nav -->
 					<li id="ingresarRecaudador" class=""><a href="<?php echo base_url('Secretario/ingresar_recaudador')?>"><span class="title">Ingresar Recaudador</span></a></li>
@@ -39,12 +33,6 @@
 			<li id="recaudador" class="has-sub"><a href="<?php echo base_url('')?>"><i class="icon-credit-card"></i><span class="title">Modificar Recaudador</span></a>
 				<ul id="navPagos" class="nav collapse"> <!-- nav -->
 					<li id="modificarRecaudador" class=""><a href="<?php echo base_url('Secretario/modificarRecaudador')?>"><span class="title">Modificar Recaudador</span></a></li>
-				</ul>
-			</li>
-
-			<li id="recaudador" class="has-sub"><a href="<?php echo base_url('')?>"><i class="icon-credit-card"></i><span class="title">Anular Recaudador</span></a>
-				<ul id="navPagos" class="nav collapse"> <!-- nav -->
-					<li id="anularRecaudador" class=""><a href="<?php echo base_url('Secretario/anularRecaudador')?>"><span class="title">Anular Recaudador</span></a></li>
 				</ul>
 			</li>
 

@@ -4,10 +4,10 @@
 		<div class="col-lg-12">
 			<div class="panel panel-default">
 				<div class="panel-heading clearfix">
-					<h3 class="panel-title">Ingresar Nuevo Socio</h3>
+					<h3 class="panel-title">Ingresar Nuevo Recaudador</h3>
 				</div>
 				<div class="panel-body">
-					 <form action="<?php echo base_url() ?>Recaudador/guardar" method="post" class="form-horizontal">
+					 <form action="<?php echo base_url() ?>Secretario/guardar_recaudador" method="post" class="form-horizontal">
 					 	<div class="form-group"> 
 							<label class="col-sm-2 control-label">Nombre</label> 
 							<div class="col-sm-10"> 
@@ -37,45 +37,14 @@
 								</div>
 							</div> 
 						</div>
-						<div class="line-dashed"></div>
-						<div class="form-group"> 
-							<label class="col-sm-2 control-label">Dirección</label> 
-							<div class="col-sm-10"> 
-								<div class="input-group"> 
-									<input type="text" placeholder="Dirección" class="form-control" name="Direccion" id="Direccion"> 
-									<span class="input-group-addon"><i class="icon-direction"></i></span>
-								</div>
-							</div> 
-						</div>
-						<div class="line-dashed"></div>
-						<div class="form-group"> 
-							<label class="col-sm-4 control-label">Fecha de Nacimiento</label> 
-							<div class="col-sm-6"> 
-								<div id="date-popup" class="input-group date"> 
-									<input type="text" data-format="D, dd MM yyyy" class="form-control" name="Fecha_Nac" id="Fecha_Nac"> 
-									<span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
-								</div>
-							</div> 
-						</div>
 
-
-
-						<div class="line-dashed"></div>
-						<div class="form-group"> 
-							<label class="col-sm-2 control-label">Teléfono</label> 
-							<div class="col-sm-10"> 
-								<div class="input-group"> 
-									<input type="text" placeholder="Teléfono" class="form-control" name="Telefono" id="Telefono"> 
-									<span class="input-group-addon"><i class="icon-phone"></i></span>
-								</div>
-							</div> 
-						</div>
 						<div class="line-dashed"></div>
 						<div class="form-group"> 
 							<label class="col-sm-2 control-label">Contraseña</label> 
 							<div class="col-sm-10"> 
 								<div class="input-group"> 
-									<input type="text" placeholder="Contraseña" class="form-control" name="password" id="password"> 
+									<input type="password" placeholder="Contraseña" class="form-control" name="password" id="password"> 
+									<span class="input-group-addon"><i class="icon-vcard"></i></span>
 								</div>
 							</div> 
 						</div>
@@ -89,7 +58,7 @@
 						<div class="form-group">
 							<div class="col-sm-4 col-sm-offset-2">
 								<button type="reset" class="btn btn-white">Cancelar</button>
-								<button type="submit" class="btn btn-primary">Guardar Socio</button>
+								<button type="submit" class="btn btn-primary">Guardar Recaudador</button>
 							</div>
 						</div>
 					</form>

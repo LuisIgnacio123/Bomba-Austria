@@ -48,11 +48,13 @@
 <link href="<?php echo base_url()?>/assets/css/plugins/datatables/jquery.dataTables.css" rel="stylesheet">
 <link href="<?php echo base_url()?>/assets/js/plugins/datatables/extensions/Buttons/css/buttons.dataTables.css" rel="stylesheet">
 
+
 <link href="<?php echo base_url()?>/assets/css/plugins/datepicker/bootstrap-datepicker.css" rel="stylesheet">
 <link href="<?php echo base_url()?>/assets/css/plugins/colorpicker/bootstrap-colorpicker.css" rel="stylesheet">
-<link href="<?php echo base_url()?>/assets/css/plugins/nouislider/nouislider.css" rel="stylesheet">
-<link href="<?php echo base_url()?>/assets/css/plugins/select2/select2.css" rel="stylesheet">
+<!--<link href="<?php echo base_url()?>/assets/css/plugins/nouislider/nouislider.css" rel="stylesheet">
+<link href="<?php echo base_url()?>/assets/css/plugins/select2/select2.css" rel="stylesheet">-->
 <link href="<?php echo base_url()?>/assets/css/mouldifi-forms.css" rel="stylesheet" >
+<link href="<?php echo base_url()?>assests/css/plugins/datatables/jquery.dataTables.css" rel="stylesheet">
 
 
 <script type="text/javascript">

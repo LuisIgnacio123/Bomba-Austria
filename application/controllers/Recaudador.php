@@ -49,10 +49,11 @@ class Recaudador extends CI_Controller {
 		$this->form_validation->set_rules('Apellido', 'apellido', 'required|trim|strip_tags');
 		$this->form_validation->set_rules('Rut', 'rut', 'required|trim|strip_tags|is_unique[socios.socio_rut]|callback_rut');
 		$this->form_validation->set_rules('Direccion', 'direccion', 'required|trim|strip_tags');
-		$this->form_validation->set_rules('Telefono', 'telefono', 'required|trim|strip_tags|xss_clean');
-		$this->form_validation->set_rules('Monto', 'monto', 'required|trim|strip_tags|xss_clean');
+		$this->form_validation->set_rules('Telefono', 'telefono', 'required|trim|strip_tags');
+		$this->form_validation->set_rules('Monto', 'monto', 'required|trim|strip_tags');
 
-		$this->form_validation->set_message('Rut', 'El {field} no es Valido');
+		$this->form_validation->set_message('check_captcha', 'texte dibt natch captcha');
+		$this->form_validation->set_message('rut', 'El {field} no es Valido');
 
 		if($this->form_validation->run() === false) {
 			$this->session->set_flashdata('query', validation_errors());
@@ -169,7 +170,7 @@ class Recaudador extends CI_Controller {
 	//	echo json_encode($this->Recaudador_model->listar('Luis Aguilera'));
 	//	echo json_encode($this->Recaudador_model->buscarSocioID($_POST["socio_id"] = 5));
 	//	echo json_encode($this->Recaudador_model->buscarSocioNombre($_POST["N_Socio"] = "felipe rivas"));
-		echo json_encode($this->Recaudador_model->buscarSocioDir($_POST["Direccion"] = "Quemchi 6193"));
+	//	echo json_encode($this->Recaudador_model->buscarSocioDir($_POST["Direccion"] = "Quemchi 6193"));
 
 	}
 
@@ -182,7 +183,8 @@ class Recaudador extends CI_Controller {
 	}
 
 	public function graficar(){
-		 $datos = $this->Recaudador_model->listar('Luis Aguilera');
+		 $nombre = $this->session->userdata('login_nombre');
+		 $datos = $this->Recaudador_model->listar($nombre);
 		 echo json_encode($datos);
 	}
 
