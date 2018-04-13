@@ -102,7 +102,6 @@
 								<button type="submit" class="btn btn-primary">Guardar Pago</button>
 							</div>
 						</div>
-
 					</form>
 				</div>
 			</div>

@@ -1,4 +1,4 @@
-//Flot Bar Chart
+    //Flot Bar Chart
 $(function () {
     $.ajax({
         type: "post",

@@ -32,13 +32,13 @@
 
 			<li id="recaudador" class="has-sub"><a href="<?php echo base_url('')?>"><i class="icon-credit-card"></i><span class="title">Modificar Recaudador</span></a>
 				<ul id="navPagos" class="nav collapse"> <!-- nav -->
-					<li id="modificarRecaudador" class=""><a href="<?php echo base_url('Secretario/modificarRecaudador')?>"><span class="title">Modificar Recaudador</span></a></li>
+					<li id="modificarRecaudador" class=""><a href="<?php echo base_url('Secretario/visualizarRecaudador')?>"><span class="title">Modificar Recaudador</span></a></li>
 				</ul>
 			</li>
 
 			<li id="recaudador" class="has-sub"><a href="<?php echo base_url('')?>"><i class="icon-credit-card"></i><span class="title">Visualizar datos de los Socios Cooperadors</span></a>
 				<ul id="navPagos" class="nav collapse"> <!-- nav -->
-					<li id="verdatos" class=""><a href="<?php echo base_url('Secretario/verdatos')?>"><span class="title">Visualizar datos de los Socios Cooperadorss</span></a></li>
+					<li id="verdatos" class=""><a href="<?php echo base_url('Secretario/visualizarSocios')?>"><span class="title">Visualizar datos de los Socios Cooperadorss</span></a></li>
 				</ul>
 			</li>
 

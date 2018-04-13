@@ -11,7 +11,9 @@ class Recaudador extends CI_Controller {
         $this->load->model('Socios_model');
         //$this->output->enable_profiler(true);
     }
-	public function index(){
+
+	public function index()
+	{
 		$this->load->view('comunes/head');
 		$this->load->view('comunes/menu-lateral-recaudador');
 		$this->load->view('comunes/menu-superior');
@@ -19,7 +21,8 @@ class Recaudador extends CI_Controller {
 		$this->load->view('comunes/footer');
 	}
 
-	public function realizarPago(){
+	public function realizarPago()
+	{
 		$this->load->view('comunes/head');
 		$this->load->view('comunes/menu-lateral-recaudador');
 		$this->load->view('comunes/menu-superior');
@@ -27,7 +30,8 @@ class Recaudador extends CI_Controller {
 		$this->load->view('comunes/footer');
 	}
 
-	public function ingresarSocio(){
+	public function ingresarSocio()
+	{
 		$this->load->view('comunes/head');
 		$this->load->view('comunes/menu-lateral-recaudador');
 		$this->load->view('comunes/menu-superior');
@@ -36,7 +40,8 @@ class Recaudador extends CI_Controller {
 	}
 
 
-	public function anularBoleta(){
+	public function anularBoleta()
+	{
 		$this->load->view('comunes/head');
 		$this->load->view('comunes/menu-lateral-recaudador');
 		$this->load->view('comunes/menu-superior');
@@ -44,7 +49,8 @@ class Recaudador extends CI_Controller {
 		$this->load->view('comunes/footer');
 	}
 
-	public function guardar(){
+	public function guardar()
+	{
 		$this->form_validation->set_rules('Nombre', 'nombre', 'required|trim|strip_tags');
 		$this->form_validation->set_rules('Apellido', 'apellido', 'required|trim|strip_tags');
 		$this->form_validation->set_rules('Rut', 'rut', 'required|trim|strip_tags|is_unique[socios.socio_rut]|callback_rut');
@@ -66,7 +72,8 @@ class Recaudador extends CI_Controller {
 			$this->load->view('comunes/menu-superior');
 			$this->load->view('socios/socio-nuevo');
 			$this->load->view('comunes/footer');
-		} else {
+		} 
+		else {
 			$nombre = $this->input->post('Nombre').' '.$this->input->post('Apellido');
 			$fecha = $this->input->post('Fecha_Nac');
 			$fecha_nac = explode('/',$fecha);
@@ -94,7 +101,8 @@ class Recaudador extends CI_Controller {
 		}
 	}
 
-	public function anular(){
+	public function anular()
+	{
 		$recibo = $this->input->post('recibo');
 
 		if($this->Recaudador_model->anularRecibo($recibo)){
@@ -110,7 +118,8 @@ class Recaudador extends CI_Controller {
 		
 	}
 
-	public function guardarpago(){
+	public function guardarpago()
+	{
 		$this->form_validation->set_rules('Talonario', 'talonario', 'required|trim|strip_tags');
 		$this->form_validation->set_rules('Boleta', 'boleta', 'required|trim|strip_tags');
 		$this->form_validation->set_rules('N_Socio', 'n_socio', 'required|trim|strip_tags');
@@ -134,21 +143,39 @@ class Recaudador extends CI_Controller {
 			$id_socio = $this->input->post('socio_id');
 			$direccion = $this->input->post('Direccion');
 			$sector = $this->input->post('Sector');
+			$cantidad_meses = $this->input->post('meses');
 
 			$fecha = $this->input->post('FechaPago');
 			$fecha_in = explode('/',$fecha);
 			$nfecha = "{$fecha_in[2]}-{$fecha_in[1]}-{$fecha_in[0]}";
 
+			$fecha_in[1]= $fecha_in[1] + $cantidad_meses;
+			
+			if ($fecha_in[1] > 12) {
+				$fecha_in[2] += 1;
+				$fecha_in[1] = 0;
+				$fecha_in[1] = $cantidad_meses;
+				$fecha_fin = "{$fecha_in[2]}-{$fecha_in[1]}-{$fecha_in[0]}";
+				
+			}
+			else{
+				$fecha_fin = "{$fecha_in[2]}-{$fecha_in[1]}-{$fecha_in[0]}";
+			}
+
 			$monto = $this->input->post('Monto');
-			$cantidad_meses = $this->input->post('meses');
+			
+			
+			
 
 			$datos = array (
 				'boleta_nombre_socio'	=> $nombre,
 				'boleta_fecha'			=> $nfecha,
+				'boleta_cantidad'		=> $cantidad_meses,
 				'boleta_aporte' 		=> $monto,
 				'boleta_codigo'			=> $id_socio,
 				'boleta_talonario'		=> $talonario,
-				'boleta_estado'			=> 1
+				'boleta_lim_fecha'		=> $fecha_fin,
+				'boleta_estado'			=> 1,
 			);
 
 			if($this->Recaudador_model->guardarpago($datos)){
@@ -172,12 +199,12 @@ class Recaudador extends CI_Controller {
 	//	echo json_encode($this->Recaudador_model->buscarSocioNombre($_POST["N_Socio"] = "felipe rivas"));
 	//	echo json_encode($this->Recaudador_model->buscarSocioDir($_POST["Direccion"] = "Quemchi 6193"));
 
+
 	}
 
 	public function buscar_boleta(){
 		$recibo = $this->input->post('recibo');
 		$datos = $this->Recaudador_model->mostrarRecibo($recibo);
-
 		echo json_encode($datos);
 
 	}
@@ -255,6 +282,4 @@ class Recaudador extends CI_Controller {
         } /* Formatea el RUT */
         return false;
     }
-
-
 }

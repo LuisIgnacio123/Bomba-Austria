@@ -30,7 +30,7 @@ function buscar_IDsocio(Value){
 
 	$.ajax({
 		type: "post",
-		url: base_url + "Recaudador/buscar_idsocio",
+		url: base_url + "/Recaudador/buscar_idsocio",
 		data: param,
 		dataType: "json",
 
@@ -53,7 +53,7 @@ var param = {
 
 	$.ajax({
 		type: "post",
-		url: base_url + "Recaudador/buscar_nombresocio",
+		url: base_url + "/Recaudador/buscar_nombresocio",
 		data: param,
 		dataType: "json",
 
@@ -77,7 +77,7 @@ function buscar_Dirsocio(Value3){
 
 	$.ajax({
 		type: "post",
-		url: base_url + "Recaudador/buscar_dirsocio",
+		url: base_url + "/Recaudador/buscar_dirsocio",
 		data: param,
 		dataType: "json",
 

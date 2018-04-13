@@ -70,6 +70,18 @@
 								</div>
 							</div> 
 						</div>
+
+						<div class="line-dashed"></div>
+						<div class="form-group"> 
+							<label class="col-sm-4 control-label">Fecha de pago</label> 
+							<div class="col-sm-6"> 
+								<div id="date-popup" class="input-group date"> 
+									<input type="text" data-format="D, dd MM yyyy" class="form-control" name="Fecha_pag" id="Fecha_pag"> 
+									<span class="input-group-addon"><i class="fa fa-calendar"></i></span> 
+								</div>
+							</div> 
+						</div>
+
 						<div class="line-dashed"></div>
 						<div class="form-group"> 
 							<label class="col-sm-2 control-label">Monto</label> 

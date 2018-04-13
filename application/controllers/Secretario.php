@@ -28,14 +28,78 @@ class Secretario extends CI_Controller {
 		$this->load->view('comunes/footer');
 	}
 
-	public function modificarRecaudador(){
+	public function visualizarRecaudador(){
 		$datos["usuarios"] = $this->Secretario_model->listar();
+
+		$this->load->view('comunes/head',$datos);
+		$this->load->view('comunes/menu-lateral-secretario');
+		$this->load->view('comunes/menu-superior');
+		$this->load->view('secretario/visualizarRecaudador');
+		$this->load->view('comunes/footer');
+	}
+
+	public function visualizarSocios(){
+		$datos["socios"] = $this->Secretario_model->listar_socio();
+
+		$this->load->view('comunes/head',$datos);
+		$this->load->view('comunes/menu-lateral-secretario');
+		$this->load->view('comunes/menu-superior');
+		$this->load->view('secretario/visualizarSocios');
+		$this->load->view('comunes/footer');
+	}
+
+	public function editarRecaudador(){
+		$datos['usuario'] = $this->Secretario_model->buscar_usuario($this->input->post('rut'));
+
+		//echo json_encode($datos['usuario']);
+
+		$datos["dataEdit_RUT"] = $datos['usuario']->usuario_rut;
+		$datos["dataEdit_Name"] = $datos['usuario']->usuario_nombre;
+		$datos["dataEdit_Privilege"] = $datos['usuario']->privilegio_nombre;
+
+		if ($datos["usuario"]->usuario_estado == 1) {
+			//$datos["usuario"]->usuario_estado = "activo";
+			$datos["dataEdit_State"] = "activo";
+
+		}
+		else{
+			$datos["dataEdit_State"] = "inactivo";
+		}
+
+		//if ($datos["usuario"]->usuario_estado == '0') {
+		//	$datos["usuario"]->usuario_estado = "inactivo";
+		//}
 
 		$this->load->view('comunes/head',$datos);
 		$this->load->view('comunes/menu-lateral-secretario');
 		$this->load->view('comunes/menu-superior');
 		$this->load->view('secretario/modificarRecaudador');
 		$this->load->view('comunes/footer');
+	}
+
+	public function actualizar_recaudador(){
+		$privilegio = 0;
+		if ($this->input->post('privilegio') == 'Recaudador') {
+			$privilegio = 1;
+		}
+		$datos = array(
+			'usuario_rut'			=> $this->input->post('rut'),
+			'usuario_nombre'		=> $this->input->post('nombre'),
+			'usuario_privilegio'	=> $privilegio,
+			'usuario_estado'		=> $this->input->post('estado'),
+		);
+
+		if($this->Secretario_model->actualizar_usuario($datos)){
+				$this->session->set_flashdata('query', 'Guardado con Exito');
+				$this->session->set_flashdata('query_alert', 'alert-success');
+				redirect(base_url('Secretario/visualizarRecaudador'), 'refresh');
+			} else {
+				// no se Guarda
+				$this->session->set_flashdata('query', 'Problemas al Guardar');
+				$this->session->set_flashdata('query_alert', 'alert-danger');
+				redirect(base_url('Secretario/visualizarRecaudador'), 'refresh');
+            }
+
 	}
 
 
@@ -50,7 +114,6 @@ class Secretario extends CI_Controller {
 		if($this->form_validation->run() === false) {
 			$this->session->set_flashdata('query', validation_errors());
 			$this->session->set_flashdata('query_alert', 'alert-danger');
-			//$datos["socio"] = $this->Socio 
 			
 			$this->load->view('comunes/head');
 			$this->load->view('comunes/menu-lateral-secretario');
@@ -81,12 +144,6 @@ class Secretario extends CI_Controller {
 		}
 	
 	}
-
-	public function anular_recaudador(){
-
-	}
-
-
 
 	public function rut($r = false){
 

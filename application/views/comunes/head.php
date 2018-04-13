@@ -28,33 +28,34 @@
 <!-- /site favicon -->
 
 <!-- Entypo font stylesheet -->
-<link href="<?php echo base_url()?>/assets/css/entypo.css" rel="stylesheet">
+<link href="<?php echo base_url()?>assets/css/entypo.css" rel="stylesheet">
 <!-- /entypo font stylesheet -->
 
 <!-- Font awesome stylesheet -->
-<link href="<?php echo base_url()?>/assets/css/font-awesome.min.css" rel="stylesheet">
+<link href="<?php echo base_url()?>assets/css/font-awesome.min.css" rel="stylesheet">
 <!-- /font awesome stylesheet -->
 
 <!-- Bootstrap stylesheet min version -->
-<link href="<?php echo base_url()?>/assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="<?php echo base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
 <!-- /bootstrap stylesheet min version -->
 
 <!-- Mouldifi core stylesheet -->
-<link href="<?php echo base_url()?>/assets/css/mouldifi-core.css" rel="stylesheet">
+<link href="<?php echo base_url()?>assets/css/mouldifi-core.css" rel="stylesheet">
 <!-- /mouldifi core stylesheet -->
 
-<link href="<?php echo base_url()?>/assets/css/mouldifi-forms.css" rel="stylesheet">
+<link href="<?php echo base_url()?>assets/css/mouldifi-forms.css" rel="stylesheet">
 
-<link href="<?php echo base_url()?>/assets/css/plugins/datatables/jquery.dataTables.css" rel="stylesheet">
-<link href="<?php echo base_url()?>/assets/js/plugins/datatables/extensions/Buttons/css/buttons.dataTables.css" rel="stylesheet">
+<!--<link href="<?php echo base_url()?>assets/css/plugins/datatables/jquery.dataTables.css" rel="stylesheet">
+<link href="<?php echo base_url()?>assets/js/plugins/datatables/extensions/Buttons/css/buttons.dataTables.css" rel="stylesheet">-->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
 
 
-<link href="<?php echo base_url()?>/assets/css/plugins/datepicker/bootstrap-datepicker.css" rel="stylesheet">
-<link href="<?php echo base_url()?>/assets/css/plugins/colorpicker/bootstrap-colorpicker.css" rel="stylesheet">
-<!--<link href="<?php echo base_url()?>/assets/css/plugins/nouislider/nouislider.css" rel="stylesheet">
-<link href="<?php echo base_url()?>/assets/css/plugins/select2/select2.css" rel="stylesheet">-->
-<link href="<?php echo base_url()?>/assets/css/mouldifi-forms.css" rel="stylesheet" >
-<link href="<?php echo base_url()?>assests/css/plugins/datatables/jquery.dataTables.css" rel="stylesheet">
+<link href="<?php echo base_url()?>assets/css/plugins/datepicker/bootstrap-datepicker.css" rel="stylesheet">
+<link href="<?php echo base_url()?>assets/css/plugins/colorpicker/bootstrap-colorpicker.css" rel="stylesheet">
+<link href="<?php echo base_url()?>assets/css/plugins/nouislider/nouislider.css" rel="stylesheet">
+<link href="<?php echo base_url()?>assets/css/mouldifi-forms.css" rel="stylesheet" >
+
 
 
 <script type="text/javascript">
