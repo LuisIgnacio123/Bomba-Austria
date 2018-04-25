@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-03-2018 a las 15:06:04
+-- Tiempo de generación: 25-04-2018 a las 01:59:08
 -- Versión del servidor: 10.1.22-MariaDB
 -- Versión de PHP: 7.1.4
 
@@ -32,9 +32,11 @@ CREATE TABLE `boletas` (
   `boletas_id` int(11) NOT NULL,
   `boleta_nombre_socio` varchar(100) NOT NULL,
   `boleta_fecha` date NOT NULL,
+  `boleta_cantidad` int(11) NOT NULL,
   `boleta_aporte` int(100) NOT NULL,
   `boleta_codigo` int(11) NOT NULL,
   `boleta_talonario` int(11) NOT NULL,
+  `boleta_lim_fecha` date NOT NULL,
   `boleta_estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -42,18 +44,38 @@ CREATE TABLE `boletas` (
 -- Volcado de datos para la tabla `boletas`
 --
 
-INSERT INTO `boletas` (`boletas_id`, `boleta_nombre_socio`, `boleta_fecha`, `boleta_aporte`, `boleta_codigo`, `boleta_talonario`, `boleta_estado`) VALUES
-(1, 'Luis Aguilera', '2017-11-12', 20000, 5, 2, 1),
-(3, 'felipe rivas', '2018-01-01', 10000, 5, 1, 1),
-(4, 'felipe rivas', '2018-01-10', 10000, 5, 1, 0),
-(5, 'felipe rivas', '2017-12-05', 3000, 5, 1, 0),
-(6, 'felipe rivas', '2017-09-05', 2000, 5, 1, 1),
-(7, 'felipe', '2017-12-12', 30000, 5, 1, 1),
-(8, 'Luis Aguilera', '2017-11-20', 2000, 5, 2, 0),
-(9, 'felipe', '2017-10-12', 8000, 1, 2, 0),
-(10, 'luis', '2017-11-19', 4000, 1, 1, 0),
-(11, 'Felipe Rivas', '2018-02-06', 20000, 5, 1, 0),
-(12, 'felipe rivas', '2018-02-06', 2000, 5, 1, 0);
+INSERT INTO `boletas` (`boletas_id`, `boleta_nombre_socio`, `boleta_fecha`, `boleta_cantidad`, `boleta_aporte`, `boleta_codigo`, `boleta_talonario`, `boleta_lim_fecha`, `boleta_estado`) VALUES
+(1, 'Luis Aguilera', '2017-11-12', 0, 20000, 5, 2, '0000-00-00', 1),
+(3, 'felipe rivas', '2018-01-01', 0, 10000, 5, 1, '0000-00-00', 1),
+(4, 'felipe rivas', '2018-01-10', 0, 10000, 5, 1, '0000-00-00', 0),
+(5, 'felipe rivas', '2017-12-05', 0, 3000, 5, 1, '0000-00-00', 0),
+(6, 'felipe rivas', '2017-09-05', 0, 2000, 5, 1, '0000-00-00', 1),
+(7, 'felipe', '2017-12-12', 0, 30000, 5, 1, '0000-00-00', 1),
+(8, 'Luis Aguilera', '2017-11-20', 0, 2000, 5, 2, '0000-00-00', 0),
+(9, 'felipe', '2017-10-12', 0, 8000, 1, 2, '0000-00-00', 0),
+(10, 'luis', '2017-11-19', 0, 4000, 1, 1, '0000-00-00', 0),
+(11, 'Felipe Rivas', '2018-02-06', 0, 20000, 5, 1, '0000-00-00', 0),
+(12, 'felipe rivas', '2018-02-06', 0, 2000, 5, 1, '0000-00-00', 0),
+(13, 'luis', '2018-03-15', 0, 2000, 9, 1, '0000-00-00', 0),
+(14, 'luis', '2018-03-22', 3, 2000, 9, 2, '0000-00-00', 1),
+(15, 'luis', '2018-03-22', 3, 2000, 9, 2, '0000-00-00', 1),
+(16, 'felipe rivas', '2018-03-22', 3, 2000, 5, 2, '0000-00-00', 1),
+(17, 'luis', '2018-03-22', 3, 2000, 9, 2, '0000-00-00', 1),
+(18, 'luis', '2018-03-22', 3, 2000, 9, 2, '0000-00-00', 1),
+(19, 'luis', '2018-03-22', 3, 2000, 9, 2, '0000-00-00', 1),
+(20, 'felipe rivas', '2018-03-22', 3, 2000, 5, 2, '0000-00-00', 1),
+(21, 'felipe rivas', '2018-03-22', 3, 1999, 5, 2, '0000-00-00', 1),
+(22, 'felipe rivas', '2018-03-22', 3, 1999, 5, 2, '0000-00-00', 1),
+(23, 'luis', '2018-03-22', 3, 2000, 9, 2, '0000-00-00', 1),
+(24, 'luis', '2018-03-22', 3, 2000, 9, 2, '0000-00-00', 1),
+(25, 'luis', '2018-03-22', 3, 2000, 9, 2, '0000-00-00', 1),
+(26, 'luis', '2018-03-22', 3, 2000, 9, 2, '0000-00-00', 1),
+(27, 'luis', '2018-03-22', 3, 2000, 9, 2, '0000-00-00', 1),
+(28, 'luis', '2018-03-22', 3, 2000, 9, 2, '0000-00-00', 1),
+(29, 'luis', '2018-12-22', 3, 2000, 9, 2, '0000-00-00', 1),
+(30, 'luis', '2018-12-22', 3, 2000, 9, 2, '0000-00-00', 1),
+(31, 'luis', '2018-12-22', 3, 2000, 9, 2, '0000-00-00', 1),
+(32, 'luis', '2018-03-22', 2, 2000, 9, 2, '2018-05-22', 1);
 
 -- --------------------------------------------------------
 
@@ -91,6 +113,7 @@ CREATE TABLE `socios` (
   `socio_fecha_nacimiento` date NOT NULL,
   `socio_telefono` varchar(100) NOT NULL,
   `socio_monto` int(11) NOT NULL,
+  `socio_fech_pago` date NOT NULL,
   `socio_estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -98,10 +121,10 @@ CREATE TABLE `socios` (
 -- Volcado de datos para la tabla `socios`
 --
 
-INSERT INTO `socios` (`socio_id`, `socio_nombre`, `socio_rut`, `socio_direccion`, `socio_sector`, `socio_fecha_nacimiento`, `socio_telefono`, `socio_monto`, `socio_estado`) VALUES
-(5, 'felipe rivas', '19258570', 'Quemchi 6193', 'Davila 1', '2017-10-26', '56666666', 2000, 1),
-(8, 'hakjhaskjh sahjkhsakj', '19187619', 'hasjkashkjhas', 'Davila 1', '2017-11-15', 'jdkjdalkd', 0, 1),
-(9, 'luis', '19187619', 'ajskjak', 'jaskjask', '2017-12-05', 'sjaksjka', 400, 1);
+INSERT INTO `socios` (`socio_id`, `socio_nombre`, `socio_rut`, `socio_direccion`, `socio_sector`, `socio_fecha_nacimiento`, `socio_telefono`, `socio_monto`, `socio_fech_pago`, `socio_estado`) VALUES
+(5, 'felipe rivas', '15790506-6', 'Quemchi 6193', 'Davila 1', '2017-10-26', '56666666', 2000, '2018-04-12', 1),
+(8, 'hakjhaskjh sahjkhsakj', '19187619-9', 'hasjkashkjhas', 'Davila 1', '2017-11-15', 'jdkjdalkd', 2000, '2017-09-15', 1),
+(9, 'luis Aguilera', '19187619-9', 'ajskjak', 'jaskjask', '2017-12-05', '56721935', 1500, '2012-12-05', 1);
 
 -- --------------------------------------------------------
 
@@ -145,7 +168,8 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`usuario_id`, `usuario_rut`, `usuario_password`, `usuario_nombre`, `usuario_privilegio`, `usuario_estado`) VALUES
 (1, '19187619-9', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 'Luis Aguilera', 3, 1),
 (2, '19174099-8', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 'Carlos Molina', 1, 1),
-(7, '18840101-5', '8cb2237d0679ca88db6464eac60da96345513964', 'cristobal hernandez', 1, 1);
+(7, '18676359-9', '8cb2237d0679ca88db6464eac60da96345513964', 'Carlos Fuentes', 1, 1),
+(8, '15345687-9', '8cb2237d0679ca88db6464eac60da96345513964', 'Juanito Perez', 1, 1);
 
 --
 -- Índices para tablas volcadas
@@ -189,7 +213,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `boletas`
 --
 ALTER TABLE `boletas`
-  MODIFY `boletas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `boletas_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT de la tabla `socios`
 --
@@ -204,7 +228,7 @@ ALTER TABLE `talonarios`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;COMMIT;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
